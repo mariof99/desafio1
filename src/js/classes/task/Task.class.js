@@ -9,6 +9,7 @@ export class Label {
         this.labels = [];
         this.checkLists = [];
         this.image = null;
+        this.nosecuantas = null;
     }
 
     addLabel(label) {
