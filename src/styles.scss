@@ -1,0 +1,37 @@
+
+$backgrnd: green;
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    background-color: $backgrnd;
+}
+
+img {
+    width: 150px;
+}
+
+div.container > div {
+    border: solid red 1px;
+}
+
+.task {
+    display: block;
+    border: solid red 1px;
+    padding: 1%;
+}
+
+.addTaskDisplay {
+    display: block;
+}
+
+.addTaskHide {
+    display: none;
+}
+
+.hoverDiv {
+    background-color: green;
+}
