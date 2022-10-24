@@ -1,9 +1,9 @@
 import {Label} from "../task/Task.class";
 
-export class Board {
+export class TaskHolder {
 
-    constructor() {
-        this.tasks = [];
+    constructor(tasks = []) {
+        this.tasks = tasks;
     }
 
     addTask(task) {
@@ -12,6 +12,10 @@ export class Board {
 
     deleteTask(id) {
         this.tasks = this.tasks.filter(task => task.id != id);
+    }
+
+    getTask(i) {
+        return this.tasks[i];
     }
     
 }

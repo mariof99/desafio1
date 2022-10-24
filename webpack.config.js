@@ -18,7 +18,6 @@ module.exports = {
             },
             {
                 test: /\.(c|sc|sa)ss$/,
-                // exclude: /styles.css$/,
                 use: ['style-loader', 'css-loader', 'sass-loader']
             },
             // {

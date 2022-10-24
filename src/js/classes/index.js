@@ -1,7 +1,9 @@
 import {Task} from './task/Task.class';
-import {Board} from './taskHolder/TaskHolder';
+import {TaskHolder} from './taskHolder/TaskHolder.class';
+
+import './taskHolder/taskHolderComponents';
 
 export {
     Task,
-    Board
+    TaskHolder
 }

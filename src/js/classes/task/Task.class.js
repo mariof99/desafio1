@@ -1,26 +1,33 @@
 import {Label, CheckList} from './subTask';
 
-export class Label {
+export class Task {
     
-    constructor(todo) {
-        this.todo = todo;
+    constructor(text) {
+        this.text = text;
         this.id = new Date().getTime();
         this.date = new Date();
         this.labels = [];
         this.checkLists = [];
         this.image = null;
-        this.nosecuantas = null;
     }
 
     addLabel(label) {
         this.labels.push(label);
     }
 
+    setLabels(labels) {
+        this.labels = labels;
+    }
+
+    getLabels() {
+        return this.labels;
+    }
+
     addCheckList(checkLists) {
         this.checkLists.push(checkLists);
     }
 
-    getTodo() {
-        return this.todo;
+    getText() {
+        return this.text;
     }
 }

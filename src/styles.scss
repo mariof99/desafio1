@@ -1,5 +1,4 @@
-
-$backgrnd: green;
+@import './css/skeleton';
 
 * {
     box-sizing: border-box;
@@ -7,7 +6,7 @@ $backgrnd: green;
 
 html, body {
     margin: 0;
-    background-color: $backgrnd;
+    background-color: #ddd;
 }
 
 img {
@@ -24,14 +23,33 @@ div.container > div {
     padding: 1%;
 }
 
-.addTaskDisplay {
+.display {
     display: block;
 }
 
-.addTaskHide {
+.hide {
     display: none;
 }
 
 .hoverDiv {
     background-color: green;
+}
+.modal {
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+    div.contenido {
+        width: 40vW;
+        height: 70vh;
+        border-radius: 10 px;
+        background-color: white;
+        position: absolute;
+        left: 30%;
+        top: 10%;
+    }
 }

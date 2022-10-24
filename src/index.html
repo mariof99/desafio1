@@ -12,7 +12,7 @@
       <!-- -------------------------------------- row boards -->
       <!-- -------------------------------------- board -->
       <div class="row">
-        <div class="four columns board">
+        <div class="four columns board" number="0">
           <!-- -------------------------------------- board title -->
           <div class="row">
             <div class="twelve columns">
@@ -23,46 +23,99 @@
           <!-- -------------------------------------- taskHolder -->
           <div class="row">
             row boards
-            <div class="twelve columns">
+            <div class="twelve columns taskHolder">
               <!-- -------------------------------------- task -->
-              <div class="row">
+
+              <div class="twelve columns task">
+                <div class="twelve columns labelList">
+                  <!-- tags -->
+                </div>
                 <div class="twelve columns task">
-                  <div class="twelve columns">
-                    <!-- tags -->
-                  </div>
-                  <div class="twelve columns task">
-                    <p>cositas para hacer</p>
-                  </div>
+                  <p>cositas para hacer</p>
                 </div>
               </div>
+
               <!-- -------------------------------------- task -->
-              <div class="row">
+
+              <div class="twelve columns task">
+                <div class="twelve columns">
+                  <!-- tags -->
+                </div>
                 <div class="twelve columns task">
-                  <div class="twelve columns">
-                    <!-- tags -->
-                  </div>
-                  <div class="twelve columns task">
-                    <p>cositas para hacer</p>
-                  </div>
+                  <p>cositas para hacer</p>
                 </div>
               </div>
+
               <!-- -------------------------------------- task -->
             </div>
           </div>
           <!-- -------------------------------------- task holder -->
           <!-- -------------------------------------- add task -->
           <div class="row">
-            <div class="twelve columns addTask hoverdiv">
-              <p class="addTaskDisplay">add task</p>
-              <button class="addTaskHide">add</button>
+            <div class="twelve columns addTaskInput hide">
+              <input type="text" value="" />
+            </div>
+            <div class="twelve columns addTask">
+              <p class="addTaskDisplay" id="parrAddTask1">add task</p>
+              <button class="hide addTaskBtn" id="buttonAddTask1">add</button>
             </div>
           </div>
           <!-- -------------------------------------- add task -->
         </div>
-          <div class="four columns board"></div>
-          <div class="four columns board"></div>
+        <div class="four columns board"></div>
+        <div class="four columns board"></div>
       </div>
       <!-- -------------------------------------- board -->
+
+      <!-- -------------------------------------- modal -->
+      <div class="modal hide">
+        <div class="contenido">
+          <div class="row">
+            <div class="twelve columns labelList">
+            </div>
+          </div>
+          <div class="row">
+            <div class="twelve columns addLabel">
+              <div class="row">
+                <div class="twelve columns">
+                  <input type="text">
+                  <button class="addLabelButton">add label</button>
+              <div class="row">
+                  <div class="twelve columns">
+                    <button class="colorSpan" style="background-color: #65ad37"></button>
+                    <button class="colorSpan" style="background-color: #c2ba1f"></button>
+                    <button class="colorSpan" style="background-color: #a72525"></button>
+                    <button class="colorSpan" style="background-color: #781065"></button>
+                  </div>
+                </row>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- -------------------------------------- modal -->
     </div>
   </body>
 </html>
+
+<div class="row">
+  <div class="twelve columns labelList">
+
+  </div>
+</div>
+<div class="row">
+  <div class="twelve columns addLabel">
+    <div class="row">
+      <div class="nine columns"></div>
+      <div class="three columns"></div>
+    <div class="row">
+        <div class="twelve columns">
+          <button class="colorSpan" style="background-color: #65ad37"></button>
+          <button class="colorSpan" style="background-color: #c2ba1f"></button>
+          <button class="colorSpan" style="background-color: #a72525"></button>
+          <button class="colorSpan" style="background-color: #781065"></button>
+        </div>
+      </row>
+    </div>
+  </div>
+</div>
