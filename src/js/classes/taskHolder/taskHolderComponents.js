@@ -1,6 +1,10 @@
 import {Task} from '../index';
 import {hideElement, displayElement} from '../../aux/aux';
-import {taskHolders} from '../../../index';
+import {taskHoldersArray} from '../../..';
+// import {handleTaskClick, funcionPrueba} from '../task';
+import {prepareModal} from '../modal/modalComponents';
+import {createTaskHtml} from '../task/taskComponents';
+
 
 const taskHolderDivs = document.querySelectorAll('.taskHolder');
 const taskDivs = document.querySelectorAll('.task');
@@ -12,32 +16,6 @@ const modal = document.querySelector('.modal');
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------
 
-const createTaskHtml = (taskHolderDiv,task) => {
-    const htmlTask = `
-        <div class="twelve columns">
-            <!-- tags -->
-        </div>
-        <div class="twelve columns task">
-            <p>${(task.getText())}</p>
-        </div> `;
-
-    const taskDiv = document.createElement('div');
-    taskDiv.classList.add('twelve', 'columns', 'task');
-    taskDiv.id = task.getId();
-    taskDiv.innerHTML = htmlTask;
-
-    taskHolderDiv.append(taskDiv);
-
-    taskDiv.addEventListener('dragstart', e => {
-        e.dataTransfer.setData('text', e.target.id);
-    });
-
-    return taskDiv;
-}
-
-// ----------------------------------------------------------------
-// ----------------------------------------------------------------
-// ----------------------------------------------------------------
 
 addTaskDivs.forEach((div, i) => {
     const parAndButt = div.children; //(0)->p (1)->button
@@ -61,9 +39,11 @@ addTaskDivs.forEach((div, i) => {
         textInput.focus();
         const textValue = textInput.value;
         if (textValue !== '') {
-            task = new Task(textValue);
+            const task = new Task(textValue);
             createTaskHtml(taskHolderDivs.item(i), task);
-            taskHolders[i].addTask(task);
+            taskHoldersArray[i].addTask(task);
+
+
         }
         
         textInput.value = '';

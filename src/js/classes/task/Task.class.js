@@ -11,6 +11,10 @@ export class Task {
         this.image = null;
     }
 
+    getId() {
+        return this.id;
+    }
+
     addLabel(label) {
         this.labels.push(label);
     }

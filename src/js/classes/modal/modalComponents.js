@@ -1,15 +1,19 @@
-import {Modal} from '.';
 import {Task} from '../task';
-import { Label } from '../task/subTask';
+import {Label} from '../task/subTask';
+import {hideElement, displayElement} from '../../aux/aux';
+import {createLabelHtml} from '../task/subTask/label/labelComponents';
 
 const modal = document.querySelector('.modal'); 
 const addLabelInput = document.getElementById("labelInput");
 const addLabelButton = document.getElementById("addLabelButton");
+const colorButtons = document.querySelectorAll('.colorButton');
+const labelDivs = document.querySelectorAll('span.labelSpan');
 
-const labelColor = '';
+let labelColor = '';
 
-const fillModal = (task) => {
+export const prepareModal = (task) => {
     modal.getElementsByClassName('labelList')[0].innerHTML = '';
+    displayElement(modal);
     displayLabels(task.getLabels());
 
     addLabelButton.addEventListener('click', e => {
@@ -17,26 +21,27 @@ const fillModal = (task) => {
     });
 }
 
-const createLabelHtml = (parentDiv, label) => {
-    const labelSpan = document.createElement('span');
-        labelSpan.classList.add('label');
-        labelSpan.style.backgroundColor = label.getColor();
-        labelSpan.innerText = label.getText();
-        parentDiv.appendChild(label);
-}
+// -------------------- LABELS -------------------------
 
 const displayLabels = (labels) => {
     labels.forEach(label => {
-        createLabelHtml(modal.getElementsByClassName('labelList')[0], label);
+        console.log(label);
+        createLabelHtml(modal.getElementsByClassName('labelList')[0], label); // create html label
     });
 }
 
-const addLabel = (e, task) => {
-    label = new Label(labelColor, addLabelInput.value);
+const addLabel = (task) => {
+    console.log(addLabelInput.value);
+    const label = new Label(labelColor, addLabelInput.value);
     task.addLabel(label);
-    createLabelHtml(document.getElementById(task.getId()).getElementsByClassName('labelList')[0], label);
-    createLabelHtml(modal.getElementsByClassName('labelList')[0], label);
 
+    createLabelHtml(document.getElementById(task.getId()).getElementsByClassName('labelList')[0], label);
+    // createLabelHtml(modal.getElementsByClassName('labelList')[0], label);
 }
 
+colorButtons.forEach(button => {
+    button.addEventListener('click', e => {
+        labelColor = button.style.backgroundColor;
+    });
+});
 

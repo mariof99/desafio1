@@ -1,8 +1,10 @@
 import './css/skeleton.css';
 import './styles.scss';
 
-import './js/classes';
-import { TaskHolder } from './js/classes';
+import {TaskHolder} from './js/classes';
 
-export const taskHolders = []; taskHolders.length = 3;
-taskHolders.fill(new TaskHolder);
+
+export const taskHoldersArray = []; taskHoldersArray.length = 3;
+for (let i = 0; i < taskHoldersArray.length; i++) {
+    taskHoldersArray[i] = new TaskHolder();
+}

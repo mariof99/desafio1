@@ -23,14 +23,14 @@
           <!-- -------------------------------------- taskHolder -->
           <div class="row">
             row boards
-            <div class="twelve columns taskHolder">
+            <div class="twelve columns taskHolder" number="0">
               <!-- -------------------------------------- task -->
 
               <div class="twelve columns task">
-                <div class="twelve columns labelList">
+                <div class="labelList">
                   <!-- tags -->
                 </div>
-                <div class="twelve columns task">
+                <div class="taskText">
                   <p>cositas para hacer</p>
                 </div>
               </div>
@@ -76,18 +76,20 @@
           </div>
           <div class="row">
             <div class="twelve columns addLabel">
-              <div class="row">
-                <div class="twelve columns">
-                  <input type="text">
-                  <button class="addLabelButton">add label</button>
-              <div class="row">
-                  <div class="twelve columns">
-                    <button class="colorSpan" style="background-color: #65ad37"></button>
-                    <button class="colorSpan" style="background-color: #c2ba1f"></button>
-                    <button class="colorSpan" style="background-color: #a72525"></button>
-                    <button class="colorSpan" style="background-color: #781065"></button>
-                  </div>
-                </row>
+              
+                <div>
+                  <input type="text" id="labelInput">
+                  <button class="addLabelButton" id="addLabelButton">add label</button>
+                </div>
+                <div>
+                  <button class="colorButton" style="background-color: #65ad37"></button>
+                  <button class="colorButton" style="background-color: #c2ba1f"></button>
+                  <button class="colorButton" style="background-color: #a72525"></button>
+                  <button class="colorButton" style="background-color: #781065"></button>
+                </div>
+                <div class="modalExitButton">
+                  <button class="exitButton">Exit</button>
+                </div>
               </div>
             </div>
           </div>

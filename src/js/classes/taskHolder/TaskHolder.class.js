@@ -3,11 +3,18 @@ import {Label} from "../task/Task.class";
 export class TaskHolder {
 
     constructor(tasks = []) {
-        this.tasks = tasks;
+        console.log('const');
+        console.log(this.tasks = tasks);
     }
 
     addTask(task) {
+        console.warn('addTask');
         this.tasks.push(task);
+        console.warn(this.tasks);
+    }
+
+    getNumTasks() {
+        return this.tasks.length;
     }
 
     deleteTask(id) {
