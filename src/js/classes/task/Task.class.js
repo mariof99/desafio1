@@ -12,7 +12,7 @@ export class Task {
     }
 
     getId() {
-        return this.id;
+        return this.id; 
     }
 
     addLabel(label) {
@@ -29,6 +29,9 @@ export class Task {
 
     addCheckList(checkLists) {
         this.checkLists.push(checkLists);
+    }
+    getCheckLists() {
+        return this.checkLists;
     }
 
     getText() {

@@ -27,21 +27,22 @@ export const createTaskHtml = (parentTaskHolderDiv, task) => {
 
     taskDiv.addEventListener('click', e => {
         const nTaskHolder = parentTaskHolderDiv.getAttribute('number');
-        const nTask = taskHoldersArray[nTaskHolder].getNumTasks();
+        // const nTask = taskHoldersArray[nTaskHolder].getNumTasks();
         // funcionPrueba();
         // handleTaskClick(nTaskHolder, taskHoldersArray[nTaskHolder].getNumTask());
 
-        prepareModal(taskHoldersArray[nTaskHolder].getTask(nTask - 1));
+        const task = taskHoldersArray[nTaskHolder].getTaskById(taskDiv.id);
+        console.log('taskTaskComponents => ' + task.getId());
+
+        prepareModal(task);
     });
 
     taskDiv.addEventListener('dragstart', e => {
-        e.dataTransfer.setData('text', e.target.id);
+        e.dataTransfer.setData('id', e.target.id);
     });
 
     return taskDiv;
 }
-
-
 
 // export const handleTaskClick = (nTaskHolder, nTask) => {
 //     prepareModal(taskHolders[nTaskHolder].getTask(nTask));

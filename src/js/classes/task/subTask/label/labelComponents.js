@@ -4,4 +4,6 @@ export const createLabelHtml = (taskDiv, label) => {
     labelSpan.style.backgroundColor = label.getColor();
     labelSpan.innerText = label.getText();
     taskDiv.appendChild(labelSpan);
+
+    return labelSpan;
 }

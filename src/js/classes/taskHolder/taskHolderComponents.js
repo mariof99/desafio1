@@ -54,6 +54,18 @@ addTaskDivs.forEach((div, i) => {
     });
 });
 
+taskHolderDivs.forEach(div => {
+
+    div.addEventListener('dragover', e => {
+        e.preventDefault();
+    });
+
+    div.addEventListener('drop', e => {
+        const id = e.dataTransfer.getData('id');
+        div.append(document.getElementById(id));
+    });
+});
+
 
 // taskHolderDivs.forEach((div, i) => {
 //     div.childNodes.forEach(task => {

@@ -21,6 +21,15 @@ export class TaskHolder {
         this.tasks = this.tasks.filter(task => task.id != id);
     }
 
+    getTaskById(id) {
+        let returnTask = false;
+        this.tasks.forEach(task => {
+            if (task.getId() == id) returnTask = task;
+        });
+
+        return returnTask;
+    }
+
     getTask(i) {
         return this.tasks[i];
     }
